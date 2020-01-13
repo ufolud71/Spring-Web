@@ -1,14 +1,14 @@
 ./runcrud.bat
 
 :openbrowser
-google-chrome "$1"
+start chrome
 if "%ERRORLEVEL%" == "0" goto openurl
 echo.
 echo Could not open browser.
 goto fail
 
 :openurl
-./urlopener "http://localhost:8080/crud/v1/task/getTasks"
+start chrome "http://localhost:8080/crud/v1/task/getTasks"
 if "%ERRORLEVEL%" == "0" goto end
 echo.
 echo Could not open url.
