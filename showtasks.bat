@@ -8,7 +8,7 @@ goto fail
 
 :runcrud
 ./runcrud.bat
-if %ERRORLEVEL% == "0" goto end
+if "%ERRORLEVEL%" == "0" goto end
 goto fail
 
 :fail
