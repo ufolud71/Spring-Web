@@ -1,3 +1,4 @@
+
 package com.crud.tasks.domain;
 
 import lombok.AllArgsConstructor;
@@ -6,12 +7,12 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "tasks")
+@Getter
+@Entity
+@Table(name = "tasks")
 public class Task {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

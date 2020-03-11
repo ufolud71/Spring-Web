@@ -1,3 +1,4 @@
+
 package com.crud.tasks.repository;
 
 import com.crud.tasks.domain.Task;
@@ -11,11 +12,14 @@ public interface TaskRepository extends CrudRepository<Task, Long> {
     List<Task> findAll();
 
     @Override
+    Optional<Task> findById(Long id);
+
+    @Override
     Task save(Task task);
 
     @Override
-    Optional<Task> findById(Long Id);
+    void deleteById(Long id);
 
     @Override
-    void deleteById(Long Id);
+    long count();
 }

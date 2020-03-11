@@ -1,3 +1,4 @@
+
 package com.crud.tasks.controller;
 
 import com.crud.tasks.domain.CreatedTrelloCard;
@@ -9,10 +10,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/v1/trello")
-@CrossOrigin("*")
 public class TrelloController {
 
     @Autowired
