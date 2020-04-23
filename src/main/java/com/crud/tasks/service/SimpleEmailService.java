@@ -20,8 +20,7 @@ public class SimpleEmailService {
     public void send(final Mail mail) {
         LOGGER.info("Starting email preparation...");
         try {
-            SimpleMailMessage mailMessage = createMailMessage(mail);
-            javaMailSender.send(mailMessage);
+            javaMailSender.send(createMailMessage(mail));
             LOGGER.info("Email has been sent.");
         } catch (MailException e) {
             LOGGER.error("Failed to process email sending: ", e.getMessage(), e);
@@ -36,22 +35,22 @@ public class SimpleEmailService {
         return mailMessage;
     }
 
-    public SimpleMailMessage setCc(final Mail mail) {
-        SimpleMailMessage mailMessage = new SimpleMailMessage();
-        mailMessage.setTo(mail.getMailTo());
-        mailMessage.setSubject(mail.getSubject());
-        mailMessage.setText(mail.getMessage());
+    //public SimpleMailMessage setCc(final Mail mail) {
+      //  SimpleMailMessage mailMessage = new SimpleMailMessage();
+      //mailMessage.setTo(mail.getMailTo());
+      //  mailMessage.setSubject(mail.getSubject());
+      //  mailMessage.setText(mail.getMessage());
 
-        SimpleMailMessage mailMessageWithCc = new SimpleMailMessage();
-        mailMessageWithCc.setTo(mail.getMailTo());
-        mailMessageWithCc.setSubject(mail.getSubject());
-        mailMessageWithCc.setText(mail.getMessage());
-        mailMessageWithCc.setCc(mail.getToCc());
+      //  SimpleMailMessage mailMessageWithCc = new SimpleMailMessage();
+      //  mailMessageWithCc.setTo(mail.getMailTo());
+      //  mailMessageWithCc.setSubject(mail.getSubject());
+      //  mailMessageWithCc.setText(mail.getMessage());
+      //  mailMessageWithCc.setCc(mail.getToCc());
 
-        if (mail.getToCc() == null) {
-            return mailMessage;
-        } else {
-            return mailMessageWithCc;
-        }
-    }
+       // if (mail.getToCc() == null) {
+       //     return mailMessage;
+       // } else {
+       //     return mailMessageWithCc;
+       // }
+  //  }
 }
