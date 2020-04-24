@@ -28,8 +28,4 @@ public class TrelloConfig {
 
     @Autowired
     private RestTemplate restTemplate;
-
-
-
-
 }
