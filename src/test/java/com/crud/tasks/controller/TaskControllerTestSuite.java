@@ -99,7 +99,7 @@ public class TaskControllerTestSuite {
     }
 
     @Test
-    public void testDeleteTask() throws Exception {
+    public void shouldDeleteTask() throws Exception {
         //Given
         Task task = new Task(1L, "test task", "test to do");
 
@@ -112,7 +112,7 @@ public class TaskControllerTestSuite {
     }
 
     @Test
-    public void testUpdateTask() throws Exception {
+    public void shouldUpdateTask() throws Exception {
             //Given
             Task task = new Task(1L, "test task", "test to do");
 
